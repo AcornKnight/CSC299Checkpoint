@@ -42,6 +42,7 @@
 				<input type="submit" name="submit" value="Home">
 				</p>
 			</form>
+
 		<?php
 			echo "<p>Copyright &copy; 2017-" . date("Y") . " Noah R Gestiehr</p>";
 		?>

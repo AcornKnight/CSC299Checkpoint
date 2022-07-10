@@ -6,6 +6,7 @@ signin($_GET,'../../auth/data/users.csv.php');
 if(!isset($_SESSION['username'])) {
 	$-SESSION['msg'] = "Please log in to view this page";
 	header('location: ../auth//auth/signin.php');
+}
 
 ?>
 <!doctype html>
@@ -31,6 +32,8 @@ if(!isset($_SESSION['username'])) {
 		<select name="author">
 			<option selected="author">Choose one</option>
 		<!-- Reads Authors.CSV into an array, it the authors.csv file does not exist instead will return an error and kill the session. -->
+
+
 		<?php
 			$authorFile = fopen("../data/authors.csv","r") or die("Author File does not exist.");
 			while(!feof($authorFile)) {

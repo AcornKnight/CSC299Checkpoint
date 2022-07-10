@@ -8,6 +8,7 @@ signin($_GET,'../../auth/data/users.csv.php');
 if(!isset($_SESSION['username'])) {
 	$-SESSION['msg'] = "Please log in to view this page";
 	header('location: ../auth//auth/signin.php');
+}
 
 ?>
 <!doctype html>
@@ -69,9 +70,7 @@ if(!isset($_SESSION['username'])) {
 				</p>
 			</form>
 
-			<?php //<a href="index.php">
-				//<button>Delete</button>
-			//</a>
+			<?php
 
 
 			?>

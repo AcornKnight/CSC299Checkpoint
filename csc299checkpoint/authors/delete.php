@@ -8,6 +8,7 @@ signin($_GET,'../../auth/data/users.csv.php');
 if(!isset($_SESSION['username'])) {
 	$_SESSION['msg'] = "Please log in to view this page";
 	header('location: ../auth//auth/signin.php');
+}
 
 ?>
 <!doctype html>
