@@ -18,7 +18,7 @@
 		if(!isset($_SESSION['username'])) {
 			$_SESSION['msg'] = "Please log in to view this page";
 			echo '<a href="auth/auth/signin.php">Sign in</a>';
-
+		}
 		if (isset($_SESSION['username'])){
 			echo '<a href="auth/auth/signout.php">Sign out</a>';
 		}
@@ -27,8 +27,7 @@
 
 			// Reads out all of the quotes and author pair.
 			$quotes = readContentHeader('quotes.csv');
-			//echo '<br>';
-			//print_r($quotes);
+			
 			for($i=0;$i<count($quotes);$i++){
 		?>
 			<h2><?= $quotes[$i]['Quote']?> </h2>

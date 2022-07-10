@@ -8,6 +8,7 @@
 		<title>ASE 230 - class of Fall 2021 Great Authors - Detail Page</title>
 	</head>
 
+
 	<?php
 		include('../lib/csv_util.php');
 	?>

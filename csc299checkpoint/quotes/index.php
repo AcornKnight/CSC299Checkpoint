@@ -16,8 +16,7 @@
 		<?php
 			// Reads the quotes file in as an array, then displays the quote+author pairs in order along with a button for users to come toa detail page for the given pair.
 			$quotes = readContentHeader('../data/quotes.csv');
-			//echo '<br>';
-			//print_r($quotes);
+
 			for($i=0;$i<count($quotes);$i++){
 		?>
 			<h2><?= $quotes[$i]['Quote']?> </h2>

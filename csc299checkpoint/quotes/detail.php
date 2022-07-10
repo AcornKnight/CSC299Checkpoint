@@ -15,8 +15,10 @@
 
 	<body style="text-align:center;">
 		<?php
+
 		// reads in our quotes file into an array. Then displays the quote+author pair from the Index variable.
 			$quotes = readContentHeader('../data/quotes.csv');
+
 		?>
 			<h1><?= $quotes[$_GET['index']]['Quote']?> </h1>
 			<p> <?= $quotes[$_GET['index']]['Author']?> </p>

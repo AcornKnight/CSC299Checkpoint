@@ -6,6 +6,7 @@ signin($_GET,'../../auth/data/users.csv.php');
 if(!isset($_SESSION['username'])) {
 	$_SESSION['msg'] = "Please log in to view this page";
 	header('location: ../auth//auth/signin.php');
+}
 
 ?>
 <!doctype html>
@@ -45,13 +46,6 @@ if(!isset($_SESSION['username'])) {
 				}
 			?>
 
-
-			<!--<form method="post"	action="<?//= $_SERVER['PHP_SELF']?>">
-				<p>
-				<input type="submit" name="submit" value="Cancel">
-				</p>
-			</form> -->
-
 			<!-- Provides a button that redirects the user home.-->
 			<form method="post"	action="index.php">
 				<p>
@@ -68,10 +62,7 @@ if(!isset($_SESSION['username'])) {
 				</p>
 			</form>
 
-			<?php //<a href="index.php">
-				//<button>Delete</button>
-			//</a>
-
+			<?php
 
 			?>
 		</p>
