@@ -2,7 +2,7 @@
 	// ASE 230 Great Quotes Project
 	// Noah Gestiehr
 	function readContent($file) {
-			$csvFile = fopen($file,"r") or die("File does not exist.");
+			$csvFile = fopen("./data/" . $file,"r") or die("File does not exist.");
 			while(!feof($csvFile)) {
 				$contentArray[] = fgetcsv($csvFile);
 			}
@@ -11,7 +11,7 @@
 	}
 	
 	function readContentIndex($file, $index) {
-			$csvFile = fopen($file,"r") or die("File does not exist.");
+			$csvFile = fopen("./data/" . $file,"r") or die("File does not exist.");
 			while(!feof($file)) {
 				$contentArray[] = fgetcsv($csvFile);
 			}
@@ -23,7 +23,7 @@
 //			$newFile = fopen($userFile,"w+") or die("That CSV file does not exist.");
 			//print_r($author);
 			//print_r($newContent);
-			file_put_contents($userFile,"\n$author,$newContent",FILE_APPEND);
+			file_put_contents("./data/" . $userFile,"\n$author,$newContent",FILE_APPEND);
 //			fclose($newFile);
 	}
 	
@@ -35,7 +35,7 @@
 			array_unshift($contentArray,$headers);
 			print_r(quoteToString($contentArray));
 			
-			file_put_contents($userFile,quoteToString($contentArray));
+			file_put_contents("./data/" . $userFile,quoteToString($contentArray));
 			
 	}
 	
@@ -72,7 +72,7 @@
 	}
 	
 	function deleteContent($userFile,$line) {
-			$modify = fopen($userFile,'r+') or die("That csv file does not exist.");
+			$modify = fopen("./data/" . $userFile,'r+') or die("That csv file does not exist.");
 			
 			
 			$contentArray=readContentHeader($userFile);
@@ -82,11 +82,11 @@
 		
 			array_splice($contentArray, $line+1, 1);
 		
-			file_put_contents($userFile,quoteToString($contentArray));
+			file_put_contents("./data/" . $userFile,quoteToString($contentArray));
 	}
 	
 	function getHeader($file){
-		$csv = array_map('str_getcsv', file($file));
+		$csv = array_map('str_getcsv', file("./data/" . $file));
 		//print_r($csv);
 		if (count($csv) < 1) { return [];}
 		$headers = $csv[0];
@@ -101,7 +101,7 @@
 	
 	function readContentHeader($file){
 		//echo $file;
-		$csv = array_map('str_getcsv', file($file));
+		$csv = array_map('str_getcsv', file("./data/" . $file));
 		//print_r($csv);
 		if (count($csv) < 1) { return [];}
 		$headers = $csv[0];
